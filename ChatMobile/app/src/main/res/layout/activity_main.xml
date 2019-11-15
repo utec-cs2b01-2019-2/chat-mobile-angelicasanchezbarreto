@@ -30,12 +30,22 @@
             android:layout_height="wrap_content"
             android:textColor="#F5F3F3"
             android:gravity="center_horizontal"
-            android:fontFamily="@font/alba2"
+            android:fontFamily="@font/winter"
             android:paddingTop="20dp"
             android:textSize="30sp"
-            android:text="Chat Mobile">
+            android:text="CS2B01 - Chat Mobile">
         </TextView>
-    <TextView
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#F5F3F3"
+            android:gravity="center_horizontal"
+            android:fontFamily="@font/headson"
+            android:paddingTop="20dp"
+            android:textSize="30sp"
+            android:text="201710405 - Angelica Sanchez">
+        </TextView>
+        <TextView
             android:layout_width="wrap_content"
             android:layout_marginTop="50sp"
             android:layout_height="wrap_content"
