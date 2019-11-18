@@ -11,7 +11,7 @@
         android:id="@+id/loginLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#293462"
+        android:background="#F2E796"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="30dp">
@@ -54,12 +54,12 @@
                 android:id="@+id/txtUsername"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFC312"
+                android:backgroundTint="#000105"
                 android:ems="10"
                 android:hint="Ingresa tu usuario"
                 android:textAlignment="center"
-                android:textColorHint="#79FFC312"
-                android:textColor="#FFC312" />
+                android:textColorHint="#000105"
+                android:textColor="#000105" />
         </LinearLayout>
 
 
@@ -76,10 +76,10 @@
                 android:ems="10"
                 android:hint="Ingresa tu contraseña"
                 android:inputType="textPassword"
-                android:textColor="#FFC312"
-                android:textColorHint="#79FFC312"
+                android:textColor="#000105"
+                android:textColorHint="#000105"
                 android:textAlignment="center"
-                android:backgroundTint="#FFC312"
+                android:backgroundTint="#000105"
                 />
         </LinearLayout>
 
@@ -92,7 +92,7 @@
                 android:id="@+id/btnLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/corners_buttons"
+                android:background="@drawable/corners_buttons2"
                 android:text="Login"
                 android:onClick="Authenticate"
                 android:fontFamily="casual"
