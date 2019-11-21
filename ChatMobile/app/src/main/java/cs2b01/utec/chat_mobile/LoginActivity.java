@@ -68,10 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             String username = response.getString("username");
                             int user_id = response.getInt("user_id");
-                            goToContactsActivity(user_id,username);
+                            goToContactsActivity(user_id, username);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
+
                     }
                 },
                 new Response.ErrorListener() {

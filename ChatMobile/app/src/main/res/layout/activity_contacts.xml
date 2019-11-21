@@ -10,7 +10,8 @@
         android:id="@+id/main_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        >
 
     </android.support.v7.widget.RecyclerView>
 

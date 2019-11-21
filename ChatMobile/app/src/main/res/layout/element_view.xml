@@ -2,14 +2,24 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/element_view_container"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="72dp"
-    android:padding="16dp">
+    android:padding="5dp"
+    android:background="#F2E796">
 
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:background="@drawable/corners_buttons3"
+        >
     <TextView
         android:id="@+id/element_view_first_line"
         android:text="line_for_username"
-        android:textSize="16sp"
+        android:textSize="24sp"
         android:textColor="#000"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
@@ -18,6 +28,8 @@
         android:id="@+id/element_view_second_line"
         android:text="line_for_Name_abd_last_name"
         android:layout_width="wrap_content"
-        android:textSize="14sp"
+        android:textSize="16sp"
         android:layout_height="wrap_content"/>
+    </LinearLayout>
+
 f</RelativeLayout>
