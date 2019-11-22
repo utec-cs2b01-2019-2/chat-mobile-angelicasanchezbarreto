@@ -46,7 +46,7 @@ public class ContactsActivity extends AppCompatActivity {
     //getting contacts from server
     public void getUsers(){
         JSONArray jsonMessage = new JSONArray();
-        final String user_id = getIntent().getExtras().get("user_id").toString();
+        final int user_id = getIntent().getExtras().getInt("user_id");
         String uri="http://10.0.2.2:8000/users_except_me/"+user_id;
 
 

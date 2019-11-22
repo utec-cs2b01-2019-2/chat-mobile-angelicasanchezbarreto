@@ -4,8 +4,7 @@
     android:id="@+id/element_view_container"
     android:layout_width="wrap_content"
     android:layout_height="72dp"
-    android:padding="5dp"
-    android:background="#F2E796">
+    android:padding="5dp">
 
 
 
