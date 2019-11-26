@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
     android:id="@+id/element_view_container"
-    android:layout_height="72dp"
-    android:layout_width="match_parent"
-    android:padding="16dp">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="1dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:background="@drawable/corners_buttons4"
         >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/element_view_friend_line"
-        android:text="This is the friend line"
-        android:textSize="16sp"
-        android:textColor="#000"
-        />
+        <TextView
+            android:id="@+id/element_view_friend_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corners_buttons4"
+            android:textSize="20sp"
+            android:textColor="#012"
+            />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/corners_buttons3"
-        >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/element_view_me_line"
-        android:layout_below="@+id/element_view_me_line"
-        android:textSize="14sp"
-        />
+        android:gravity="right">
+
+        <TextView
+            android:id="@+id/element_view_me_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/corners_buttons3"
+            android:textColor="#012"
+            android:textSize="20sp" />
     </LinearLayout>
+
 </RelativeLayout>

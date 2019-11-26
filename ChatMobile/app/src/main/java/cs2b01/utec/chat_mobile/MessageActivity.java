@@ -63,6 +63,8 @@ public class MessageActivity extends AppCompatActivity {
                         //TODO process response
                         mAdapter = new MessageAdapter(response, getActivity(), userFromId);
                         mRecyclerView.setAdapter(mAdapter);
+                        mAdapter.notifyDataSetChanged();
+                        mRecyclerView.smoothScrollToPosition(mRecyclerView.getAdapter().getItemCount());
                     }
                 },
                 new Response.ErrorListener(){
@@ -102,6 +104,7 @@ public class MessageActivity extends AppCompatActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
+                        getMessages();
                     }
                 },
                 new Response.ErrorListener() {
@@ -114,10 +117,13 @@ public class MessageActivity extends AppCompatActivity {
 
         RequestQueue queue = Volley.newRequestQueue(this);
         queue.add(jsonObjectRequest);
-
-        EditText editText = (EditText)findViewById(R.id.txtMessage);
-        editText.setText("");
+        mensaje.setText("");
+        getMessages();
     }
+
+
+
+
 
 
 }
