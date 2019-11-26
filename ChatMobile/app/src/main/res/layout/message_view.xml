@@ -9,24 +9,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left">
+        android:gravity="left"
+        android:background="@drawable/corners_buttons4"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/element_view_friend_line"
-        android:text="This is the first line"
+        android:text="This is the friend line"
         android:textSize="16sp"
         android:textColor="#000"
         />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/corners_buttons3"
+        >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/element_view_me_line"
-        android:layout_below="@+id/element_view_first_line"
+        android:layout_below="@+id/element_view_me_line"
         android:textSize="14sp"
         />
     </LinearLayout>

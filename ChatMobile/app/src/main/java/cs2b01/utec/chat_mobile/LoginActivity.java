@@ -32,15 +32,11 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void Authenticate(View view){
-        //Toast.makeText(this, "Boton clicked!!", Toast.LENGTH_LONG).show();
         //1.  Getting username and password (from the view)
         EditText txtUsername = (EditText)findViewById(R.id.txtUsername);
         EditText txtPassword = (EditText)findViewById(R.id.txtPassword);
         String username = txtUsername.getText().toString();
         String password = txtPassword.getText().toString();
-
-        //Toast.makeText(this, "Boton clicked!!", Toast.LENGTH_LONG).show();
-
 
         //2.  Creating a message using user input
         Map<String, String> message = new HashMap<>();
@@ -49,8 +45,6 @@ public class LoginActivity extends AppCompatActivity {
 
         //3.  Converting the message object to JSON string (jsonify)
         JSONObject jsonMessage = new JSONObject(message);
-
-        //Toast.makeText(this, jsonMessage.toString(), Toast.LENGTH_LONG).show();
 
 
         //4.  Sending json message to the server
@@ -94,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
     private void goToContactsActivity(int user_id, String username) {
         Intent intent = new Intent(this, ContactsActivity.class);
         intent.putExtra("user_id", user_id);
-        intent.putExtra("username",username);
+        intent.putExtra("username", username);
         startActivity(intent);
     }
 }

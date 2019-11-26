@@ -26,14 +26,14 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
 
         public ViewHolder(View itemView) {
             super(itemView);
-            friendLine = itemView.findViewById(R.id.element_view_first_line);
-            myLine = itemView.findViewById(R.id.element_view_second_line);
+            friendLine = itemView.findViewById(R.id.element_view_friend_line);
+            myLine = itemView.findViewById(R.id.element_view_me_line);
             container = itemView.findViewById(R.id.element_view_container);
         }
     }
 
-    public MessageAdapter(JSONArray elements, Context mContext, int userFromId){
-        this.elements = elements;
+    public MessageAdapter(JSONArray elemnents, Context mContext, int userFromId){
+        this.elements = elemnents;
         this.mContext = mContext;
         this.userFromId = userFromId;
     }
@@ -43,7 +43,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(
                 parent.getContext()).inflate(
-                        R.layout.message_view,parent, false
+                R.layout.message_view, parent, false
         );
         return new MessageAdapter.ViewHolder(view);
     }
@@ -58,17 +58,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.ViewHold
             if(userFromId == this.userFromId){
                 holder.myLine.setText(mFirstLine);
                 holder.friendLine.setText("");
-            }
-            else{
+            }else{
                 holder.myLine.setText("");
                 holder.friendLine.setText(mFirstLine);
             }
-        }
-        catch (JSONException e){
+
+        }catch (JSONException e){
             e.printStackTrace();
         }
     }
-
 
     @Override
     public int getItemCount() {

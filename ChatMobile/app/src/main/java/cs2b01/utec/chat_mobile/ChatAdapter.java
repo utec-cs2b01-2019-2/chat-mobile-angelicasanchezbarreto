@@ -15,15 +15,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
+
     public JSONArray elements;
     private Context context;
     public int userFromId;
 
     @NonNull
     @Override
-    public ChatAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.element_view,parent, false);
-        return new ViewHolder(view);
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.element_view, parent, false);
+        return  new ViewHolder(view);
     }
 
     public void goToMessageActivity(int user_id, String username){
@@ -35,24 +36,20 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ChatAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         try {
             JSONObject element = elements.getJSONObject(position);
             String name = element.getString("name")+" "+element.getString("fullname");
             final String username = element.getString("username");
-            final String id = element.getString("id");
+            final int user_id = element.getInt("id");
             holder.first_line.setText(name);
             holder.second_line.setText(username);
 
+            //OnClick open next activity:  Message Activity
             holder.container.setOnClickListener(new View.OnClickListener(){
-
                 @Override
                 public void onClick(View v) {
-                    Intent goToMessage = new Intent(context,MessageActivity.class);
-                    goToMessage.putExtra("user_from_id",userFromId);
-                    goToMessage.putExtra("user_to_id",id);
-                    goToMessage.putExtra("username", username);
-                    context.startActivity(goToMessage);
+                    goToMessageActivity(user_id, username);
                 }
             });
 
@@ -60,6 +57,7 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
     }
 
     @Override
@@ -67,12 +65,11 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         return elements.length();
     }
 
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends  RecyclerView.ViewHolder{
         TextView first_line, second_line;
         RelativeLayout container;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView){
             super(itemView);
             first_line = itemView.findViewById(R.id.element_view_first_line);
             second_line = itemView.findViewById(R.id.element_view_second_line);
@@ -85,5 +82,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.ViewHolder> {
         this.context = context;
         this.userFromId = userFromId;
     }
+
 
 }
